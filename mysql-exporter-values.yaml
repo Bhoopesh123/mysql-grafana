@@ -1,0 +1,14 @@
+# mysql connection params which build the my.cnf config
+mysql:
+  db: ""
+  host: "172.19.0.2"
+  pass: "INZP4rdO9G"
+  port: 3306
+  protocol: ""
+  user: "root"
+
+serviceMonitor:
+  # enabled should be set to true to enable prometheus-operator discovery of this service
+  enabled: true
+  additionalLabels:
+    release: grafana
