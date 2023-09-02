@@ -4,7 +4,7 @@
 # 1. Install mysql database on cluster:  
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm install mysql bitnami/mysql 
+    helm upgrade --install mysql bitnami/mysql 
     kubectl get pods 
     kubectl exec -it mysql-0 -- /bin/bash
 
@@ -24,7 +24,7 @@ Below Steps needs to be followed:
     kubectl create ns metrics
     kubectl config set-context --current --namespace=metrics
 
-    helm install grafana prometheus-community/kube-prometheus-stack
+    helm upgrade --install grafana prometheus-community/kube-prometheus-stack
 
 # 3. Install Prometheus Mysql Exporter  
 
@@ -33,7 +33,7 @@ Below Steps needs to be followed:
 
     helm upgrade --install mysql-exporter prometheus-community/prometheus-mysql-exporter -f mysql-exporter-values.yaml
 
-# 3. Install Prometheus Mysql Exporter Dashboard  
+# 4. Install Prometheus Mysql Exporter Dashboard  
 
     https://grafana.com/grafana/dashboards/14057-mysql/
     https://grafana.com/grafana/dashboards/7362-mysql-overview/
